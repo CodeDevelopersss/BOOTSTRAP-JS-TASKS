@@ -1,0 +1,38 @@
+body {
+    background-color: #dcdcdc; /* Light grey background for the body */
+    margin: 0;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    color: rgb(158, 28, 28);
+    font-size: 16px;
+    margin: 0 10px;
+    display: inline-block;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .main-content {
+    min-height: 100vh; 
+  }
+  
+  .sidebar {
+    min-height: 100vh; 
+    padding: 20px;
+    text-align: right;
+    position:relative ;
+  }
+  
+  
+  .maincontent{  
+    height:500px;
+  }
+
+  

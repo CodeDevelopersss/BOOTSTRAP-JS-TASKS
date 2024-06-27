@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #firstNumber {
+            margin-bottom: 6px;
+        }
+        #secondNumber {
+            margin-bottom: 6px;
+        }
+        .active {
+            border: 2px solid rgb(108, 162, 237);
+        }
+        body{
+            text-align: center;
+        }
+        input{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplication and Divison</h1>
+    <form>
+        1st Number: <input type="text" id="firstNumber" /><br>
+        2nd Number: <input type="text" id="secondNumber" /><br>
+        <input type="button" onClick="calculateMultiplication(this)" value="Multiply" />
+        <input type="button" onClick="calculateDivision(this)" value="Divide" />
+    </form>
+    <p>The Result is: <br>
+        <span id="result"></span>
+    </p>
+
+    <script>
+        function calculateMultiplication(button) {
+            let num1 = document.getElementById("firstNumber").value;
+            let num2 = document.getElementById("secondNumber").value;
+            document.getElementById("result").innerHTML = num1 * num2;
+            removeActiveClassFromButtons();
+            button.classList.add('active');
+        }
+
+        function calculateDivision(button) {
+            let num1 = document.getElementById("firstNumber").value;
+            let num2 = document.getElementById("secondNumber").value;
+            if (num2 !== '0') {
+                document.getElementById("result").innerHTML = num1 / num2;
+            } else {
+                document.getElementById("result").innerHTML = "Cannot divide by zero";
+            }
+            removeActiveClassFromButtons();
+            button.classList.add('active');
+        }
+
+        function removeActiveClassFromButtons() {
+            let buttons = document.querySelectorAll('input[type="button"]');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>
